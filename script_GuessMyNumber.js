@@ -21,7 +21,12 @@ soundtrack.volume = 0.1;
 soundtrack.loop = true;
 victorySound.volume = 0.1;
 
-soundtrack.play();
+document.addEventListener('click', function () {
+  if (!document.querySelector('.overlay').classList.contains('hidden')) {
+    document.querySelector('.overlay').classList.add('hidden');
+    soundtrack.play();
+  }
+});
 
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
